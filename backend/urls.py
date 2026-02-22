@@ -30,4 +30,6 @@ urlpatterns = [
 
     # Users app
     path('api/users/', include('users.urls')),
+    # Courses app
+    path('api/courses/', include('courses.urls')),
 ]

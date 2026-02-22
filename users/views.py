@@ -31,4 +31,12 @@ class ProtectedView(APIView):
         return Response({
             "message": "You are authenticated",
             "user": request.user.username
-        })        
+        })   
+
+from .permissions import IsAdminUserCustom
+
+class AdminOnlyView(APIView):
+    permission_classes = [IsAdminUserCustom]
+
+    def get(self, request):
+        return Response({"message": "You are admin"})         
