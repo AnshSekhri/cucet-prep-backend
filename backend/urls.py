@@ -32,4 +32,8 @@ urlpatterns = [
     path('api/users/', include('users.urls')),
     # Courses app
     path('api/courses/', include('courses.urls')),
+    #Payment app
+    path('api/payments/', include('payments.urls')),
+    #Booking app
+    path('api/bookings/', include('bookings.urls')),
 ]

@@ -150,5 +150,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
+PAYMENT_GATEWAY_SECRET = os.getenv("PAYMENT_GATEWAY_SECRET")
+
 AUTH_USER_MODEL = 'users.User'
 
