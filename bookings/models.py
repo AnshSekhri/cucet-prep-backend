@@ -1,11 +1,17 @@
 from django.db import models
-
+import uuid
 # Create your models here.
 from django.db import models
 from django.conf import settings
 
 
 class AvailableSlot(models.Model):
+    
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
 
     date = models.DateField()
     start_time = models.TimeField()
@@ -20,6 +26,12 @@ class AvailableSlot(models.Model):
 
 
 class Booking(models.Model):
+
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
 
     slot = models.OneToOneField(
         AvailableSlot,

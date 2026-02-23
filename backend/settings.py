@@ -154,3 +154,8 @@ PAYMENT_GATEWAY_SECRET = os.getenv("PAYMENT_GATEWAY_SECRET")
 
 AUTH_USER_MODEL = 'users.User'
 
+#for giving media in  the content
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+

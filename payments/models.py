@@ -1,5 +1,5 @@
 from django.db import models
-
+import uuid
 # Create your models here.
 from django.db import models
 from django.conf import settings
@@ -7,6 +7,13 @@ from courses.models import Course
 
 
 class Payment(models.Model):
+
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    
     STATUS_CHOICES = (
         ("PENDING", "Pending"),
         ("SUCCESS", "Success"),

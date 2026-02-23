@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Course, Enrollment
 
-
 class CourseSerializer(serializers.ModelSerializer):
     is_unlocked = serializers.SerializerMethodField()
 
