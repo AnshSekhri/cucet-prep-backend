@@ -3,7 +3,17 @@ from .models import Payment
 
 
 class PaymentSerializer(serializers.ModelSerializer):
+    course_title = serializers.CharField(source="course.title", read_only=True)
+
     class Meta:
         model = Payment
-        fields = "__all__"
+        fields = [
+            "id",
+            "course",
+            "course_title",
+            "amount",
+            "status",
+            "transaction_id",
+            "created_at"
+        ]
         read_only_fields = ["user", "status", "transaction_id", "created_at"]

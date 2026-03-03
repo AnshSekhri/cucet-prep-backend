@@ -94,12 +94,13 @@ class StudentDashboardSummaryView(APIView):
                 "topic": upcoming_booking.topic
             }
 
-        return Response({
-            "total_courses": total_courses,
-            "total_bookings": total_bookings,
-            "upcoming_booking": upcoming_data,
-            "past_bookings_count": past_bookings_count
-        })
+        response = Response({
+                "total_courses": total_courses,
+                "total_bookings": total_bookings,
+                "upcoming_booking": upcoming_data,
+                "past_bookings_count": past_bookings_count
+            })
+        return response
 
 
 # ------------------------
